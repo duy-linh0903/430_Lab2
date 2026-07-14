@@ -18,14 +18,8 @@ const Calculator = () => {
     }
 
     const operatorBtn = (operator) => {
-      if (operation==='') {
-        setFirstNum(curNum);
-        setOperation(operator);
-      } else {
-        calculate();
-        setFirstNum(display);
-        setOperation(operator);
-      }
+      setFirstNum(curNum);
+      setOperation(operator);
       setDisplay(display+operator);
       setCurNum('');
     }
@@ -54,7 +48,7 @@ const Calculator = () => {
     }
 
     return (
-        <ScrollView showsVerticalScrollIndicator={false} style={Styles.container}>
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={Styles.container}>
             <View style={Styles.display}>
                 <Text style={Styles.result}>{display}</Text>
             </View>
@@ -102,10 +96,7 @@ const Calculator = () => {
                 </TouchableOpacity>
               </View>
               <View style={Styles.row}>
-                <TouchableOpacity style={[Styles.btn,Styles.btn_operator]} onPress={()=>clear()}>
-                  <Text style={Styles.btn_text}>C</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={Styles.btn} onPress={() => numberBtn(0)}>
+                <TouchableOpacity style={[Styles.specialBtn,Styles.two]} onPress={() => numberBtn(0)}>
                   <Text style={Styles.btn_text}>0</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[Styles.btn,Styles.btn_equal]} onPress={()=>calculate()}>
@@ -113,6 +104,11 @@ const Calculator = () => {
                 </TouchableOpacity>
                 <TouchableOpacity style={[Styles.btn,Styles.btn_operator]} onPress={()=> operatorBtn('+')}>
                   <Text style={Styles.btn_cal}>+</Text>
+                </TouchableOpacity>
+              </View>
+              <View>
+                <TouchableOpacity style={[Styles.specialBtn,Styles.full]} onPress={()=>clear()}>
+                  <Text style={Styles.btn_text}>C</Text>
                 </TouchableOpacity>
               </View>
             </View>

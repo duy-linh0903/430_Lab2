@@ -5,16 +5,18 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     gap: 10,
-    marginBottom: 10
+    marginBottom: 10,
+    width: '100%'
   },
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    margin: 40
   },
   btn: {
-    width: 65,
-    height: 65,
+    width: '20%',
+    aspectRatio: 1,
     borderRadius: '50%',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -47,15 +49,32 @@ const style = StyleSheet.create({
   },
   display: {
     backgroundColor: '#f0f0f0',
-    width: 300,
+    width: '100%',
     height: 100,
     marginBottom: 20,
     borderRadius: 10,
-    padding: 10,
-    flex: 1
+    padding: 10
   },
   result: {
     fontSize: 26
+  },
+  specialBtn: {
+    height: 65,
+    borderRadius: 50,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.4,
+    shadowRadius: 4,
+    elevation: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f0f0f0'
+  },
+  full: {
+    width: '100%'
+  },
+  two: {
+    width: '48%'
   }
 });
 
